@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import VirtualCard from "./components/VirtualCard";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const paragraph =
+    "My passion for learning constantly drives me to explore new horizons and expand my skill set. Having an experience in Designing helps me to pursue in making a creative website. Combining creativity and other ability is such an interesting discovery.";
+
+  const data = {
+    name: "Darren Ezra",
+    positions: ["Full Stack Developer", "UI UX Enthusiast"],
+    skills: ["React JS", "Laravel"],
+    socialMedia: [
+      {
+        name: "whatsapp",
+        link: "https://wa.me/6281510254631"
+      },
+      {
+        name: "github",
+        link: "https://github.com/RenderDek90/"
+      }
+    ],
+    story: paragraph,
+    motto: "Make your own story"
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="bg-gradient-to-r from-cyan-500 to-blue-500 p-5 min-h-screen flex flex-row justify-center items-center">
+        <VirtualCard props={data} />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
