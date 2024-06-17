@@ -1,6 +1,4 @@
-export function Skills() {
-  const skills = ["ReactJS", "Laravel"];
-
+export function Skills({ skills }) {
   return (
     <>
       <div className="flex flex-wrap mt-12 gap-2">
